@@ -11,7 +11,6 @@
 function [S_bar] = predict(S,v,omega,R,delta_t)
 N = size(S, 1);
 M = size(S, 2);
-% S_bar = zeros(N, M);
 S_bar_X = S(1:3, :) + delta_t * [v * cos(S(3, :)); v * sin(S(3,:)); repmat(omega, 1, M)];
 S_bar_X = S_bar_X + randn(N - 1, M) .* repmat(sqrt(diag(R)), 1, M); % Diffusion, assuming an uncorrelated sigma_R
 S_bar = [S_bar_X; S(4, :)];

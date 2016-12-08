@@ -34,6 +34,7 @@ for i = 1 : n
     Psi(1, i, :) = max(norm * exp(sum(-0.5 .* nu .* Q_diag .* nu, 1)));
 end
 
+% outlier detection
 outlier = (mean(reshape(Psi, n, M), 2) <= Lambda_psi);
     
 % time-consuming loops

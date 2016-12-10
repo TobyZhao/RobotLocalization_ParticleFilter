@@ -4,6 +4,7 @@
 %           S_bar(t):       4XM
 % Outputs:
 %           S(t):           4XM
+% randomize from 0 to 1/M, 1/M to 2/M, ..., (M-1)/M to 1 for M times
 function S = systematic_resample(S_bar)
 cdf = cumsum(S_bar(4, :));
 M = size(S_bar, 2);

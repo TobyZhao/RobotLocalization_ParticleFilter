@@ -63,8 +63,8 @@ outlier = (mean(reshape(Psi, n, M), 2) <= Lambda_psi);
 %         Psi(1, i, m) = Psi_0(i, c(1), m);
 %     end
 %
-%   %outlier detection
-%    outlier(i) = (mean(Psi(1,i,:)) <= Lambda_psi);
+%   % outlier detection
+%     outlier(i) = (mean(Psi(1,i,:)) <= Lambda_psi);
 % end
 
 end

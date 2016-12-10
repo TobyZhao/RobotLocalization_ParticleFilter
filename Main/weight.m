@@ -5,9 +5,12 @@
 % Outputs: 
 %           S_bar(t)            4XM
 function S_bar = weight(S_bar,Psi,outlier)
+% filter outliers
 p1 = Psi(1, find(~outlier), :);
-p = prod(p1,2);
-p = p/sum(p);
+p = prod(p1, 2);
+
+% normalization
+p = p / sum(p);
 S_bar(4,:) = p;
 
 end

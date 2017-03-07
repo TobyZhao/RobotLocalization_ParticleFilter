@@ -11,15 +11,15 @@
 % Outputs:
 %           v(t):           1X1
 %           omega(t):       1X1
-function [v,omega] = calculate_odometry(e_R,e_L,E_T,B,R_R,R_L,delta_t)
+function [v, omega] = calculate_odometry(e_R, e_L, E_T, B, R_R, R_L, delta_t)
 if ~delta_t
     v = 0;
     omega = 0;
     return;
 end
-w_R = (2 * pi * e_R) / (E_T * delta_t);
-w_L = (2 * pi * e_L) / (E_T * delta_t);
-omega = (w_R * R_R - w_L * R_L) / B;
-v = (w_R * R_R + w_L * R_L) / 2;
+w_R = (2*pi*e_R)/(E_T*delta_t);
+w_L = (2*pi*e_L)/(E_T*delta_t);
+omega = (w_R*R_R - w_L*R_L)/B;
+v = (w_R*R_R + w_L*R_L)/2;
 
 end
